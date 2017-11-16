@@ -86,6 +86,12 @@ module.exports = {
         }
     },
     methods: {
+        periodUpdate () {
+            var obj = this
+            setInterval(() => {
+                obj.getData().then(obj.updateChart)
+            }, 60000)
+        },
         getData () {
             this.loading = true
 
